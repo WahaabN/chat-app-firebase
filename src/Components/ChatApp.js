@@ -21,7 +21,7 @@ const ChatApp = (props) => {
         {messages.map((message) =>
 
         
-        message.createdById === userid ? <div className="sent-message" key={message.id}>{message.message} </div> : <div className="recieved-message" key={message.id}>   {message.createdByUserName}: {message.message}</div>
+        message.createdById === userid ? <div className="sent-message" key={message.id}>{message.message} </div> : <div className="recieved-message" key={message.id}><span className="message-username">{message.createdByUserName}:</span> <br /> <span className="indentation">{message.message}</span></div>
           
     )}
         
@@ -31,7 +31,7 @@ const ChatApp = (props) => {
         <form action="javascript:void(0);">
           <input placeholder="Enter a message..." value = {inputValue} onChange = {handleUserInput} id="input-message" autoComplete="off"></input>
           
-          <button
+          <button className="send-btn"
             onClick={() =>
               addMessage(document.getElementById("input-message").value)
             }
