@@ -21,7 +21,7 @@ const ChatApp = (props) => {
         {messages.map((message) =>
 
         
-        message.createdById === userid ? <div className="sent-message" key={message.id}>{message.message} </div> : <div className="recieved-message" key={message.id}><span className="message-username">{message.createdByUserName}:</span> <br /> <span className="indentation">{message.message}</span></div>
+        message.createdById === userid ? <div className="sent-message" key={message.id}>{message.message} </div> : <div className="recieved-message" key={message.id}><br /> <span className="message-username">{message.createdByUserName}:</span> <br /> <span className="indentation">{message.message}</span></div>
           
     )}
         
